@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Downloads</title>
+</head>
+<body>
+    <h1>Available Files and Folders</h1>
+    <ul>
+        {% for item in files_and_folders %}
+            {% if is_file(item) %}
+                <li>{{ item }} <a href="/downloads/{{ item }}" download><button>Download</button></a></li>
+            {% else %}
+                <li>{{ item }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>
